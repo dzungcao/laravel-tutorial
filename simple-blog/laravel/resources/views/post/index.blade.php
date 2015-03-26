@@ -18,7 +18,7 @@
 						<?php foreach ($posts as $key => $value) : ?>
 							<tr>
 								<td>
-									<a href="/{{$value->id}}-{{$value->title}}"><?=  $value->title ?></a>
+									<a href="/{{$value->id}}-{{$value->prettyTitle()}}"><?=  $value->title ?></a>
 								</td>
 								<td>
 									<span>{{$value->created_at}}</span>	
