@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use App\User;
-use App\Post;
+use App\Models\User;
+use App\Models\Post;
 class DatabaseSeeder extends Seeder {
 
 	/**
@@ -31,8 +31,10 @@ class PostTableSeeder extends Seeder {
 
     public function run()
     {
-        Post::create(['title'=> 'Hello World 1','content'=>'This is my first post on Laravel Web Blog']);
-        Post::create(['title'=> 'Hello World 2','content'=>'This is my first post on Laravel Web Blog']);
-        Post::create(['title'=> 'Hello World 3','content'=>'This is my first post on Laravel Web Blog']);
+    	 DB::table('post')->delete();
+    	for ($i=0; $i < 100; $i++) { 
+    		# code...
+    		Post::create(['title'=> 'Hello World ' . $i,'content'=>$i.' - This is my first post on Laravel Web Blog']);
+    	}
     }
 }

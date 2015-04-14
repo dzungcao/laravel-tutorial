@@ -11,7 +11,11 @@
 |
 */
 
+Route::get('/setup', 'SetupController@index');
+Route::get('/setup', 'SetupController@index');
+
 /*Url to home page*/
+
 Route::get('/', 'HomeController@index');
 
 /*Url to view post detail*/

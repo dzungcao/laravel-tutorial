@@ -1,22 +1,26 @@
 <?php namespace App\Http\Controllers;
-use App\Post;
+
+use App\Repository\IPostRepository;
 
 class HomeController extends Controller {
 
-	/**
-	 * Show the application dashboard to the user.
-	 *
-	 * @return Response
-	 */
+	protected $postRepo;
+
+	public function __construct(IPostRepository $postRepo){
+		$this->postRepo = $postRepo;
+	}
+	
 	public function index()
 	{
-		$posts = Post::all();
-		return view('home',['posts'=>$posts]);
+		
+		$posts = $this->postRepo->all();
+		
+		return \View::make('home',compact('posts'));
 	}
 
 	public function view($id)
 	{
-		$post = Post::find($id);
-		return view('view',['post'=>$post]);
+		$post = $this->postRepo->findById($id);
+		return view('view',compact('post'));
 	}
 }
