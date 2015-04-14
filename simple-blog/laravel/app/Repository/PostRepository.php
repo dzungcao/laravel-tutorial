@@ -20,6 +20,6 @@ class PostRepository implements IPostRepository{
 
 	}
 	public function findById($id){
-
+		return Post::find($id);
 	}
 }

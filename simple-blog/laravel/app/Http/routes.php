@@ -12,7 +12,7 @@
 */
 
 Route::get('/setup', 'SetupController@index');
-Route::get('/setup', 'SetupController@index');
+Route::post('/setup', 'SetupController@index');
 
 /*Url to home page*/
 

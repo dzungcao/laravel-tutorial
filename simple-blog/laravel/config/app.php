@@ -192,8 +192,7 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-
-		'Setting'   => 'App\Libraries\Setting',
+		'Setting'   => 'App\Library\Setting',
 	],
 
 ];

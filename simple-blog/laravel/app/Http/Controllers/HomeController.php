@@ -12,15 +12,13 @@ class HomeController extends Controller {
 	
 	public function index()
 	{
-		
-		$posts = $this->postRepo->all();
-		
+		$posts = $this->postRepo->all();	
 		return \View::make('home',compact('posts'));
 	}
 
 	public function view($id)
 	{
 		$post = $this->postRepo->findById($id);
-		return view('view',compact('post'));
+		return \View::make('view',compact('post'));
 	}
 }
